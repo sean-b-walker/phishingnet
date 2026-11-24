@@ -1,0 +1,10 @@
+{
+  "payroll-reset.eml": "phish",
+  "receipt.eml": "ok",
+  "team-deadline.eml": "ok",
+  "newsletter.eml": "ok",
+  "meeting-notes.eml": "ok",
+  "gift-cards.eml": "phish",
+  "shared-file.eml": "suspicious",
+  "reply-mismatch.eml": "suspicious"
+}
