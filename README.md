@@ -181,13 +181,5 @@ The rubric reads like a spec: defined terms, rules, edge cases, exact output key
 Missing environment variables stop the run with a clear message, HTTP errors print the status and body, and an empty model response dumps the full message for debugging. The provider is configured entirely through environment variables, so switching models is a config change.
  
 ---
- 
-## Known limitations and next steps
- 
-- **Tiny dataset.** Eight samples is enough to learn the workflow, not to measure real accuracy. Add more, especially tricky `ok` emails and realistic `phish` variants.
-- **Accuracy hides which mistakes happen.** Missing a phish and flagging a legitimate email are very different errors. Report a confusion matrix, and weigh false negatives more heavily.
-- **No output validation.** Unlike its sibling project `schema_guard`, `judge.py` doesn't validate the model's JSON against a schema. Adding one (verdict, confidence and `next` required, at most three reasons) would catch malformed output.
-- **Signals the rubric mentions but the parser may not extract.** The rubric refers to mismatched link text and "authentication details", but `mail.py` only extracts URLs and a few headers. Extract the HTML link text next to each href, and `Authentication-Results` (SPF, DKIM, DMARC) where present.
-- **One run per sample.** Run each email several times and report consistency.
-- **Grounding check is narrow.** It only looks at email addresses and domains in the reasons, so other invented claims would pass.
----
+
+ This README, including its diagrams, was developed in conjunction with Claude (Anthropic).
